@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="row" style="width:100%">
+        <div id="formItem"></div>
+    </div>
+
+        @if (TempData["Message"] != null)
+        {
+            @*<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                @Html.Raw(TempData["Message"])
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+*@
+            <div class="formPopup" id="popupForm"> 
+                <div class="form-wrapper">
+                <form >
+                    <H2>Warehouse Recomondation for <br>@Html.Raw(TempData["crop"]) </H2>
+                    <h3>Room : @Html.Raw(TempData["room"])</h3>
+                    <hr>
+                    <table id="opt" style="margin-left: 165px">
+                        <tr>
+                            <td>The Actual Tempreature requirement is </td>
+                            <td class="value fw">@Html.Raw(TempData["MinTempreature"]) -  @Html.Raw(TempData["MaxTempreature"])</td>
+                        </tr>
+                        <tr>
+                            <td>The Actual Humidity requirement is </td>
+                            <td class="value fw">@Html.Raw(TempData["MinHumidity"]) - @Html.Raw(TempData["MaxHumidity"])</td>
+                        </tr>
+                        <tr>
+                            <td>Maximum storage time is: </td>
+                            <td class="value fw">@Html.Raw(TempData["Storage"])</td>
+                        </tr>
+                    </table>
+                    <hr><br>
+                    <h3>Required Ajustments Needs to Consider</h3>
+                    @Html.Raw(TempData["Message"])
+                    <p>The Stockes should be released on or before <span class="change-value">@Html.Raw(TempData["Date"])</span></p>
+                    <br>
+                    <div >
+                <a asp-action="Index" class="btn btn-info3" >Back</a>
+            </div>
+                </form>
+            </div> </div>
+             
+        }
+
+@section Scripts{
+    <script>
+        $('#formItem').load("/RoomDetails/FromHomeCreate")
+    </script>
+}

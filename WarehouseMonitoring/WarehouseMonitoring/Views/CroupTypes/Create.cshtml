@@ -1,0 +1,79 @@
+﻿@model WarehouseMonitoring.Models.CroupType
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h2>Create Harvests Type</h2>
+<br/>
+ <div class="form-wrapper">
+  <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" ></div>
+            <div class="form-group2">
+                <label asp-for="Name"></label>
+                <span class="red">*</span>
+                <input asp-for="Name" class="form-control" />
+               <span asp-validation-for="Name" class="text-danger2"></span>
+            </div>
+            <div class="form-group2">
+                <label asp-for="MinStorageLife"></label> 
+                <span class="validations"></span>
+                <span class="red">*</span>
+                <input asp-for="MinStorageLife" class="form-control" />
+                <span asp-validation-for="MinStorageLife" class="text-danger2"></span>
+            </div>
+            <div class="form-group2">
+                <label asp-for="MaxStorageLife"></label>
+                <span class="validations"></span>
+                <span class="red">*</span>
+                <input asp-for="MaxStorageLife" class="form-control" />
+                <span asp-validation-for="MaxStorageLife" class="text-danger2"></span>
+            </div>
+            <div class="form-group2">
+                <label asp-for="FreezingPoint"></label>
+                <span class="validations"></span>
+                <span class="red">*</span>
+                <input asp-for="FreezingPoint" class="form-control" />
+                <span asp-validation-for="FreezingPoint" class="text-danger2"></span>
+            </div>
+            <div class="form-group2">
+                <label asp-for="MinTemperature"></label>
+                <span class="red">*</span>
+                <input asp-for="MinTemperature" class="form-control" />
+                <span asp-validation-for="MinTemperature" class="text-danger2"></span>
+            </div>
+            <div class="form-group2">
+                <label asp-for="MaxTemperature"></label>
+                <span class="red">*</span>
+                <input asp-for="MaxTemperature" class="form-control" />
+                <span asp-validation-for="MaxTemperature" class="text-danger2"></span>
+            </div>
+            <div class="form-group2">
+                <label asp-for="MinHumidity"></label>
+                <span class="red">*</span>
+                <input asp-for="MinHumidity" class="form-control" />
+                <span asp-validation-for="MinHumidity" class="text-danger2"></span>
+            </div>
+            <div class="form-group2">
+                <label asp-for="MaxHumidity"></label>
+                <span class="red">*</span>
+                <input asp-for="MaxHumidity" class="form-control" />
+                <span asp-validation-for="MaxHumidity" class="text-danger2"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="submit" />
+                <input type="reset" value="Reset" class="reset" />
+            </div>
+        </form>
+    </div>
+            <div class="d-flex justify-content-center">
+                <a asp-action="Index" class="btn btn-info2" >Back</a>
+            </div>
+    
+             
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

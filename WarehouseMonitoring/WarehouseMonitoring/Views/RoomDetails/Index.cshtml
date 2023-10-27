@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WarehouseMonitoring.Models.RoomDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<table class="table" id="tdesig">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tempreature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Humidity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDateTime)
+            </th>
+             <th>
+                 Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tempreature)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Humidity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDateTime)
+                </td>
+                <td>
+                     <a asp-action="Delete"  class="btn delete" asp-route-id="@item.Id">Delete </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

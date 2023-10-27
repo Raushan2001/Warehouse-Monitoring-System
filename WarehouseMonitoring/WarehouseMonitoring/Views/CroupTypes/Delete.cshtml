@@ -1,0 +1,60 @@
+﻿@model WarehouseMonitoring.Models.CroupType
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Harvests Type</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="form-wrapper">
+    <table style="text-align:left;" class="d-flex justify-content-center">
+        <tr> 
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.Name)</td>
+            <td style="text-align:center">@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.MinStorageLife)</td>
+            <td style="text-align:center"> @Html.DisplayFor(model => model.MinStorageLife)</td>
+        </tr>
+        <tr>
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.MaxStorageLife)</td>
+            <td style="text-align:center">@Html.DisplayFor(model => model.MaxStorageLife)</td>
+        </tr>
+        <tr>
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.FreezingPoint)</td>
+            <td style="text-align:center">@Html.DisplayFor(model => model.FreezingPoint)</td>
+        </tr>
+        <tr>
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.MinTemperature)</td>
+            <td class="fw" style="text-align:center">@Html.DisplayFor(model => model.MinTemperature)</td>
+        </tr>
+        <tr>
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.MaxTemperature)</td>
+            <td style="text-align:center">@Html.DisplayFor(model => model.MaxTemperature)</td>
+        </tr>
+        <tr>
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.MinHumidity)</td>
+            <td style="text-align:center">@Html.DisplayFor(model => model.MinHumidity)</td>
+        </tr>
+        <tr>
+            <td class="fw" style="padding-right: 30px">@Html.DisplayNameFor(model => model.MaxHumidity)</td>
+            <td style="text-align:center">@Html.DisplayFor(model => model.MaxHumidity)</td>
+        </tr>
+        <tr class="d-flex justify-content-center">
+             <td>
+                 <form asp-action="Delete">
+                     <input type="submit" value="Delete" class="btn deletebtn " asp-action="Delete" />
+                 </form> 
+             </td>    
+        
+        
+    </table>
+ </div>
+
+    
+    
+        <div class="d-flex justify-content-center">
+                <a asp-action="Index" class="btn btn-info2" >Back</a>
+            </div>
+    

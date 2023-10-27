@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WarehouseMonitoring.Models.CroupType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a asp-action="Create" class="btn btn-info1">Create New</a>
+</p>
+<table class="table" id="tdesig">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinStorageLife)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxStorageLife)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreezingPoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinTemperature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxTemperature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinHumidity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxHumidity)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinStorageLife)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxStorageLife)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FreezingPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinTemperature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxTemperature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinHumidity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxHumidity)
+            </td>
+            <td style="column-width:520px;">
+                <a asp-action="Edit" class="btn edit" asp-route-id="@item.Id">Edit</a> 
+                <a asp-action="Delete"  class="btn delete" asp-route-id="@item.Id">Delete </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

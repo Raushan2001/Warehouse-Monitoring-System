@@ -1,0 +1,31 @@
+﻿@model WarehouseMonitoring.Models.Room
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Room</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div class="form-wrapper">
+    <table style="text-align:left;" class="d-flex justify-content-center">
+        <tr>
+           <td class="fw" style="padding-right: 30px"> @Html.DisplayNameFor(model => model.Name) </td>
+           <td style="text-align:center">@Html.DisplayFor(model => model.Name) </td>
+        </tr>
+   <tr class="d-flex justify-content-center">
+             <td>
+                 <form asp-action="Delete">
+                     <input type="submit" value="Delete" class="btn deletebtn " asp-action="Delete" />
+                 </form> 
+             </td>    
+        
+        
+    </table>
+ </div>
+
+    
+    
+        <div class="d-flex justify-content-center">
+                <a asp-action="Index" class="btn btn-info2" >Back</a>
+            </div>

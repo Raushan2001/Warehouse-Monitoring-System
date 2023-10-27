@@ -1,0 +1,35 @@
+﻿@model WarehouseMonitoring.Models.Room
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create Room</h2>
+
+    <div  class="content">
+        <div class="form-wrapper">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group2">
+                <label asp-for="Name"  ></label>
+                <span class="red">*</span>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger2"></span>
+            </div>
+            <div class="form-group">
+                 <input type="submit" value="Create" class="submit"/>
+                <input type="reset" value="Reset" class="reset" />
+            </div>
+        </form>
+        </div>
+            <div class="d-flex justify-content-center">
+                <a asp-action="Index" class="btn btn-info2" >Back</a>
+            </div>
+    </div> 
+        
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

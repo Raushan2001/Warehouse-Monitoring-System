@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WarehouseMonitoring.Models.Harvest>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-info1">Create New</a>
+</p>
+<table class="table" id="tdesig">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CroupType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfStorage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+              <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CroupType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Room.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfStorage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                 <a asp-action="Edit" class="btn edit" asp-route-id="@item.Id">Edit</a> 
+                <a asp-action="Delete"  class="btn delete" asp-route-id="@item.Id">Delete </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
